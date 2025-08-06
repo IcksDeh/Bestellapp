@@ -1,5 +1,12 @@
+#top_bar{
+    height: 80px;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+}
+
 #logo_header{
-    height: 40px;
+    height: 60px;
     padding-left: 20px;
 }
 
@@ -18,7 +25,37 @@
 #menu_choice{
     display: flex;
     align-items: center;
-    background-color: gainsboro;
+    background-color: rgb(247, 244, 244);
     height: 50px;
     gap: 15px;
+}
+
+
+
+#rating{
+    color: orange;
+    font-weight: bold;
+}
+
+.div_img_maindish{
+    height: 150px;
+    width: 100%;
+}
+
+#img_maindish{
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.box_maindish{
+    border: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+}
+
+.all_boxes_maindish_section{
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
 }
