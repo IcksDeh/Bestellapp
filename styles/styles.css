@@ -92,6 +92,16 @@
 .cart_wrapper{
     width: 300px;
     flex-grow: 1;
+    /* https://smoothshadows.com/#djEsMSwzLDAuMjUsMjQsNiwwLCMwMzA3MTIsI2YzZjRmNiwjZmZmZmZmLDI%3D */
+    /* box-shadow: 0px 1px 3px rgba(3, 7, 18, 0.08),
+    0px 3px 11px rgba(3, 7, 18, 0.17),
+    0px 6px 24px rgba(3, 7, 18, 0.25); */
+    /* https://smoothshadows.com/#djEsMSwzLDAuMzksMTgsMTIsLTYsIzAzMDcxMiwjZjNmNGY2LCNmZmZmZmYsMg%3D%3D */
+    box-shadow: -1px 1px 2px rgba(3, 7, 18, 0.13),
+  -3px 5px 8px rgba(3, 7, 18, 0.26),
+  -6px 12px 18px rgba(3, 7, 18, 0.39);
+
+
 }
 
 .cart_content{
