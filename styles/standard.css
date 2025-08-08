@@ -9,10 +9,15 @@ body{
 }
 
 .distance_edge{
-    margin-left: 20px;
-    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
 }
 
-/* .size_divs{
-    width: ;
-} */
+.width_divs{
+    width: 1980px;
+}
+
+table{
+    width: 100%;
+}

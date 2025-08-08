@@ -12,65 +12,102 @@
     <header>
         <img id="logo_header" src="./assets/Logo/Bestell App- Logo.svg" alt="Bestellapp Logo">
     </header>
-    <main>
-        <div>
+    <div class="main_cart_wrapper">
+        <main class="content_main_wrapper">
+            <section class="img_div">
+                <img id="img_asia_noodles" src="./assets/img/asiatische Nudeln.jpg" alt="Asiatische Nudeln">
+            </section>
+            <section class="distance_edge">
+                <h1>Beste Asiaküche</h1> 
+                <p id="rating"> Bewertung (4,2 von 5 Sternen)</p>
+            </section>
+            <section  id="menu_choice">
+                <p class="distance_edge"><strong>Hauptgerichte</strong> </p>
+                <p class="distance_edge"><strong>Beilage</strong></p>
+            </section>
+            <section class="distance_edge div_img_dish" >
+                <img class="img_dish" src="./assets/img/Reisgericht.jpg" alt="Hauptgerichte">
+            </section>
+            <article class="distance_edge all_boxes_maindish_section">
+                <h2>Hauptgerichte</h2>
+                <section class="box_maindish">
+                    <div class="distance_edge">
+                    <h3>Hauptgericht 1</h3>
+                        <p>Beschreibung HG1</p>
+                        <p class="price_style">Preis 9.99€</p>
+                    </div>
+                    <div class="div_add_button">
+                        <button class="add_button">+</button>
+                    </div>
+                </section>
+                <section class="box_maindish">
+                    <div class="distance_edge">
+                        <h3>Hauptgericht 2</h3>
+                        <p>Beschreibung HG2</p>
+                        <p class="price_style">Preis 19.99€</p>
+                    </div>
+                    <div class="div_add_button" >
+                        <button class="add_button">+</button>
+                    </div>
+                </section>
+                <section class="box_maindish">
+                    <div class="distance_edge">
+                        <h3>Hauptgericht 3</h3>
+                        <p>Beschreibung HG3</p>
+                        <p class="price_style">Preis 29.99€</p>
+                    </div>
+                    <div class="div_add_button">
+                        <button class="add_button">+</button>
+                    </div>
+                </section class="box_maindish">
+            </article>
+            <section class="distance_edge div_img_dish">
+                <img class="img_dish" src="./assets/img/Pommes.jpg" alt="Beilagen">
+                <h2>Beilagen</h2>
+                <p>Soon to be added</p>
+            </section>
+        </main>
+        <aside class="cart_wrapper">
+            <h2 class="title_basket">Warenkorb</h2>
+            <div class="cart_content">
+                <h3 class="title_basket_style">Hauptgericht X</h3>
+                <div class="orderelements_in_cart">
+                    <div class="button_elements">
+                        <button class="button_cart">
+                            <img class="button_cart_plus_minus" src="./assets/img/minus_PP.svg" alt="Weniger">
+                        </button>
+                        <p>1x</p>
+                        <button class="button_cart">
+                            <img class="button_cart_plus_minus" src="./assets/img/plus_PP.svg" alt="Mehr">
+                        </button>
+                    </div>
+                    <p>5,99</p>
+                    <Button class="button_cart">
+                        <img class="button_cart_trash" src="./assets/img/trash_2_PP.svg" alt="Entfernen">
+                    </Button>
+                </div>
+            </div>
+            <div class="divider">
+
+            </div>
+            <table class="table_style">
+                <tr>
+                    <td class="td_left">Zwischensumme</td>
+                    <td class="td_right">15,90€</td>
+                </tr>
+                <tr>
+                    <td class="td_left">Lieferkosten</td>
+                    <td class="td_right">5,00€</td>
+                </tr>
+                <tr>
+                    <td class="td_left">Gesamt</td>
+                    <td class="td_right">20,90€</td>
+                </tr>
+            </table>
             
-        </div>
-        <section class="img_div">
-            <img id="img_asia_noodles" src="./assets/img/asiatische Nudeln.jpg" alt="Asiatische Nudeln">
-        </section>
-        <section class="distance_edge">
-            <h1>Beste Asiaküche</h1> 
-            <p id="rating"> Bewertung (4,2 von 5 Sternen)</p>
-        </section>
-        
-        <section  id="menu_choice">
-            <p class="distance_edge"><strong>Hauptgerichte</strong> </p>
-            <p class="distance_edge"><strong>Beilage</strong></p>
-        </section>
-        <section class="distance_edge div_img_dish" >
-            <img class="img_dish" src="./assets/img/Reisgericht.jpg" alt="Hauptgerichte">
-        </section>
-        <article class="distance_edge all_boxes_maindish_section">
-            <h2>Hauptgerichte</h2>
-            <section class="box_maindish">
-                <div class="distance_edge">
-                   <h3>Hauptgericht 1</h3>
-                    <p>Beschreibung HG1</p>
-                    <p class="price_style">Preis 9.99€</p>
-                </div>
-                <div class="div_add_button">
-                    <button class="add_button">+</button>
-                </div>
-            </section>
-            <section class="box_maindish">
-                <div class="distance_edge">
-                    <h3>Hauptgericht 2</h3>
-                    <p>Beschreibung HG2</p>
-                    <p class="price_style">Preis 19.99€</p>
-                </div>
-                <div class="div_add_button" >
-                    <button class="add_button">+</button>
-                </div>
-            </section>
-            <section class="box_maindish">
-                <div class="distance_edge">
-                    <h3>Hauptgericht 3</h3>
-                    <p>Beschreibung HG3</p>
-                    <p class="price_style">Preis 29.99€</p>
-                </div>
-                <div class="div_add_button">
-                    <button class="add_button">+</button>
-                </div>
-            </section class="box_maindish">
-        </article>
-        <section class="distance_edge div_img_dish">
-            <img class="img_dish" src="./assets/img/Pommes.jpg" alt="Beilagen">
-            <h2>Beilagen</h2>
-            <p>Soon to be added</p>
-        </section>
-    </main>
-    <div></div>
+
+        </aside>
+    </div>
     <footer>
 
     </footer>
