@@ -3,6 +3,8 @@ header{
     background-color: orange;
     display: flex;
     align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
 body{
     margin: 0;

@@ -16,16 +16,16 @@ function showMainDishInCartTemplate(mainDishIndex){
                 <h3 class="title_basket_style">${mainDishes[mainDishIndex].name}</h3>
                 <div class="orderelements_in_cart">
                     <div id="main_dish_in_cart ${mainDishIndex}" class="button_elements">
-                        <button class="button_cart">
+                        <button onclick="reduceMainDishInCart (${mainDishIndex})" class="button_cart">
                             <img class="button_cart_plus_minus" src="./assets/img/minus_PP.svg" alt="Weniger">
                         </button>
                         <p>${mainDishes[mainDishIndex].amount}x</p>
-                        <button onclick="raiseDishInCart(${mainDishIndex})  class="button_cart">
-                            <img class="button_cart_plus_minus" src="./assets/img/plus_PP.svg" alt="Mehr">
+                        <button onclick="addMainDishToCart(${mainDishIndex})" class="button_cart">
+                            <img  class="button_cart_plus_minus" src="./assets/img/plus_PP.svg" alt="Mehr">
                         </button>
                     </div>
                     <p>${mainDishes[mainDishIndex].price.toFixed(2)}€</p>
-                    <Button class="button_cart">
+                    <Button onclick="setMainDishToZero(${mainDishIndex})" class="button_cart">
                         <img class="button_cart_trash" src="./assets/img/trash_2_PP.svg" alt="Entfernen">
                     </Button>
                 </div>

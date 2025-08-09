@@ -17,8 +17,11 @@ function addMainDishToCart(mainDishIndex){
 }
 
 function reduceMainDishInCart(mainDishIndex){
-    mainDishes[mainDishIndex].amount -= 1;
-    showMainDishInCart();
+    if(mainDishes[mainDishIndex].amount >=1){
+        mainDishes[mainDishIndex].amount -= 1;
+        showMainDishInCart();
+    }
+    
 }
 
 function showMainDishInCart(){
@@ -29,17 +32,23 @@ function showMainDishInCart(){
             showCartContent.innerHTML += showMainDishInCartTemplate(index);
         }; 
     }
+    calculateSubtotal();
 }
 
-function raiseDishInCart(mainDishIndex){
-    mainDishes[mainDishIndex].amount += 1;
-    renderAmount(mainDishIndex);
+function setMainDishToZero(mainDishIndex){
+    mainDishes[mainDishIndex].amount = 0;
+    showMainDishInCart();
+
 }
 
-function renderAmount(mainDishIndex) {
-    let mainDishInCart = document.getElementById('main_dish_in_cart'+ mainDishIndex);
-    mainDishInCart.innerHTML= renderMainDishInCartTemplate(mainDishIndex);
-    
+function calculateSubtotal(){
+    let showSubtotal = document.getElementById('')
+    let subtotal = 0;
+    for (let index = 0; index < mainDishes.length; index++) {
+       let resultEachDish = mainDishes[index].amount * mainDishes[index].price;
+       subtotal += resultEachDish;
+       console.log(subtotal);
+       resultEachDish.innerHTML = showSubtotalTemplate();
+        
+    }
 }
-
-
