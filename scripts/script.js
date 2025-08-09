@@ -42,7 +42,6 @@ function setMainDishToZero(mainDishIndex){
 }
 
 function calculateSubtotal(){
-    let showSubtotal = document.getElementById('')
     let subtotal = 0;
     for (let index = 0; index < mainDishes.length; index++) {
        let resultEachDish = mainDishes[index].amount * mainDishes[index].price;
@@ -51,4 +50,7 @@ function calculateSubtotal(){
        resultEachDish.innerHTML = showSubtotalTemplate();
         
     }
+}
+
+function toggleCart(){
 }

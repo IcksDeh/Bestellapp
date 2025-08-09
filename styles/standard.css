@@ -23,3 +23,7 @@ body{
 table{
     width: 100%;
 }
+
+.d_none{
+    display: none;
+}
