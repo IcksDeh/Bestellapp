@@ -6,9 +6,12 @@
     <title>Bestellapp</title>
     <link rel="stylesheet" href="./styles/standard.css">
     <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./scripts/database.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/template.js"></script>
     
 </head>
-<body>
+<body onload="renderFunction()">
     <header>
         <img id="logo_header" src="./assets/Logo/Bestell App- Logo.svg" alt="Bestellapp Logo">
     </header>
@@ -28,38 +31,10 @@
             <section class="distance_edge div_img_dish" >
                 <img class="img_dish" src="./assets/img/Reisgericht.jpg" alt="Hauptgerichte">
             </section>
-            <article class="distance_edge all_boxes_maindish_section">
+            <div class="distance_edge">
                 <h2>Hauptgerichte</h2>
-                <section class="box_maindish">
-                    <div class="distance_edge">
-                    <h3>Hauptgericht 1</h3>
-                        <p>Beschreibung HG1</p>
-                        <p class="price_style">Preis 9.99€</p>
-                    </div>
-                    <div class="div_add_button">
-                        <button class="add_button">+</button>
-                    </div>
-                </section>
-                <section class="box_maindish">
-                    <div class="distance_edge">
-                        <h3>Hauptgericht 2</h3>
-                        <p>Beschreibung HG2</p>
-                        <p class="price_style">Preis 19.99€</p>
-                    </div>
-                    <div class="div_add_button" >
-                        <button class="add_button">+</button>
-                    </div>
-                </section>
-                <section class="box_maindish">
-                    <div class="distance_edge">
-                        <h3>Hauptgericht 3</h3>
-                        <p>Beschreibung HG3</p>
-                        <p class="price_style">Preis 29.99€</p>
-                    </div>
-                    <div class="div_add_button">
-                        <button class="add_button">+</button>
-                    </div>
-                </section class="box_maindish">
+            </div>
+            <article id="show_main_dish" class="distance_edge all_boxes_maindish_section">
             </article>
             <section class="distance_edge div_img_dish">
                 <img class="img_dish" src="./assets/img/Pommes.jpg" alt="Beilagen">
@@ -81,7 +56,7 @@
                             <img class="button_cart_plus_minus" src="./assets/img/plus_PP.svg" alt="Mehr">
                         </button>
                     </div>
-                    <p>5,99</p>
+                    <p>5,99€</p>
                     <Button class="button_cart">
                         <img class="button_cart_trash" src="./assets/img/trash_2_PP.svg" alt="Entfernen">
                     </Button>
