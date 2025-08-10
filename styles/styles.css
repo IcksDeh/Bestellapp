@@ -78,6 +78,12 @@
     border-top: 0px;
     border-right: 0px;
     background-color: white;
+    cursor: pointer;
+}
+
+.add_button:hover{
+    background-color: orange;
+    color: white;
 }
 
 .main_cart_wrapper{
@@ -95,8 +101,6 @@
     box-shadow: -1px 1px 2px rgba(3, 7, 18, 0.13),
   -3px 5px 8px rgba(3, 7, 18, 0.26),
   -6px 12px 18px rgba(3, 7, 18, 0.39);
-
-
 }
 
 .cart_content{
@@ -141,16 +145,19 @@
 .button_cart{
     background-color: white;
     border: 0;
+    cursor: pointer;
 }
 
 .button_cart_trash{
     height: 30px;
     width: auto;
+    cursor: pointer;
 }
 .button_cart_plus_minus{
     height: 35px;
     width: auto;
     border: 0;
+    cursor: pointer;
 }
 
 .title_basket_style{
