@@ -1,0 +1,8 @@
+@media(max-width: 650px){
+    .cart_wrapper{
+        width: 100%;
+        position: absolute;
+        background-color: white;
+        height: 100%;
+    }
+}

@@ -1,5 +1,7 @@
 function renderFunction() {
+    loadFromLocalStorage();
     renderMainDish();
+    showMainDishInCart();
 }
 
 function renderMainDish(){
@@ -14,14 +16,15 @@ function renderMainDish(){
 function addMainDishToCart(mainDishIndex){
     mainDishes[mainDishIndex].amount += 1;
     showMainDishInCart();
+    saveToLocalStorage();
 }
 
 function reduceMainDishInCart(mainDishIndex){
     if(mainDishes[mainDishIndex].amount >=1){
         mainDishes[mainDishIndex].amount -= 1;
+        saveToLocalStorage();
         showMainDishInCart();
     }
-    
 }
 
 function showMainDishInCart(){
@@ -37,8 +40,8 @@ function showMainDishInCart(){
 
 function setMainDishToZero(mainDishIndex){
     mainDishes[mainDishIndex].amount = 0;
+    saveToLocalStorage();
     showMainDishInCart();
-
 }
 
 function calculateSubtotalCosts(){
@@ -71,4 +74,18 @@ function toggleCart(){
     document.getElementById('id_content_main_wrapper').classList.toggle('content_main_wrapper');
     document.getElementById('id_main_cart_wrapper').classList.toggle('main_cart_wrapper');
     document.getElementById('id_cartwrapper').classList.toggle('d_none');
+}
+
+function saveToLocalStorage(){
+    localStorage.setItem("mainDishes", JSON.stringify(mainDishes));
+}
+
+function loadFromLocalStorage(){
+    let mainDishesArray = JSON.parse(localStorage.getItem("mainDishes"));
+    if(mainDishesArray == null){
+        mainDishesArray = mainDishes;
+    }
+    else{
+        mainDishes = mainDishesArray;
+    }
 }

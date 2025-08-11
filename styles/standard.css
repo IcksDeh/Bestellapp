@@ -8,12 +8,15 @@ header{
 }
 body{
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .distance_edge{
     padding-left: 20px;
     padding-right: 20px;
     box-sizing: border-box;
+    width: 1000px;
 }
 
 .width_divs{
@@ -26,4 +29,14 @@ table{
 
 .d_none{
     display: none;
+}
+
+footer{
+    height: 80px;
+    background-color: orange;
+    text-align: center;
+}
+
+main{
+    min-height: calc(100vh - 160px);
 }

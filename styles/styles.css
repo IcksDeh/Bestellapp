@@ -2,19 +2,16 @@
     height: 60px;
     padding-left: 20px;
 }
-
 #img_asia_noodles{
     width: 100%;
     height: 150px;
     object-fit: cover;
 
 }
-
 .img_div{
     width: 100%;
     height: 150px;
 }
-
 #menu_choice{
     display: flex;
     align-items: center;
@@ -22,44 +19,32 @@
     height: 50px;
     gap: 15px;
 }
-
 #rating{
     color: orange;
     font-weight: bold;
 }
-
-.div_img_dish{
-    height: 150px;
-    width: 100%;
-    margin-top: 30px;
-}
-
 .img_dish{
     height: 150px;
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
-    
+    margin-top: 30px;
 }
-
 .box_maindish{
     border: 1px solid rgb(206, 203, 203);
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
 }
-
 .all_boxes_maindish_section{
     gap: 30px;
     display: flex;
     flex-direction: column;
 }
-
 .price_style{
     color: orange;
     font-weight: bold;
 }
-
 .div_add_button{
     width: 50px;
 }
@@ -80,96 +65,24 @@
     background-color: white;
     cursor: pointer;
 }
-
 .add_button:hover{
     background-color: orange;
     color: white;
 }
 
-.main_cart_wrapper{
+#id_content_main_wrapper{
     display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-
+    flex-direction: column;
+    align-items: center;
 }
 .content_main_wrapper{
     width: calc(100% - 400px);
+    
+    
 }
-.cart_wrapper{
-    width: 300px;
-    flex-grow: 1;
-    box-shadow: -1px 1px 2px rgba(3, 7, 18, 0.13),
-  -3px 5px 8px rgba(3, 7, 18, 0.26),
-  -6px 12px 18px rgba(3, 7, 18, 0.39);
-}
-
-.cart_content{
-    width: 100%;
-    position: sticky;
-    top: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-    box-sizing: border-box;
-}
-
-.title_basket{
-    margin: 0;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border: 1px solid rgb(206, 203, 203);
-}
-
-.orderelements_in_cart{
+.main_cart_wrapper{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-}
+    position: relative;
 
-.button_elements{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.divider{
-    border-top: 1px solid rgb(206, 203, 203);
-    margin-top: 20px;
-}
-
-.table_style{
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.button_cart{
-    background-color: white;
-    border: 0;
-    cursor: pointer;
-}
-
-.button_cart_trash{
-    height: 30px;
-    width: auto;
-    cursor: pointer;
-}
-.button_cart_plus_minus{
-    height: 35px;
-    width: auto;
-    border: 0;
-    cursor: pointer;
-}
-
-.title_basket_style{
-    margin-bottom: 5px;
-}
-
-.td_left{
-    font-weight: bold;
-}
-
-.td_right{
-    text-align: right;
-    padding-right: 20px;
-    font-weight: bold
 }
