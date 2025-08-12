@@ -1,6 +1,9 @@
 function renderFunction() {
     loadFromLocalStorage();
     renderMainDish();
+    renderSideDish();
+    renderDrinks();
+    renderDesserts();
     showMainDishInCart();
 }
 
@@ -8,9 +11,37 @@ function renderMainDish(){
     let mainDishContent = document.getElementById('show_main_dish');
     mainDishContent.innerHTML = '';
 
-    for (let MainDishIndex = 0; MainDishIndex < mainDishes.length; MainDishIndex++) {
-        mainDishContent.innerHTML += mainDishTemplate(MainDishIndex);
+    for (let mainDishIndex = 0; mainDishIndex < mainDishes.length; mainDishIndex++) {
+        mainDishContent.innerHTML += dishTemplate(mainDishes, mainDishIndex);
     }
+}
+
+function renderSideDish(){
+    let sideDishContent = document.getElementById('show_side_dish');
+    sideDishContent.innerHTML = '';
+
+    for (let sideDishIndex = 0; sideDishIndex < sideDishes.length; sideDishIndex++) {
+        sideDishContent.innerHTML += dishTemplate(sideDishes, sideDishIndex);
+    }
+}
+
+function renderDrinks(){
+    let drinksContent = document.getElementById('show_drinks');
+    drinksContent.innerHTML = '';
+
+    for (let drinksIndex = 0; drinksIndex < drinks.length; drinksIndex++) {
+        drinksContent.innerHTML += dishTemplate(drinks, drinksIndex );
+    }
+}
+
+function renderDesserts(){
+     let dessertsContent = document.getElementById('show_dessert');
+    dessertsContent.innerHTML = '';
+
+    for (let dessertsIndex = 0; dessertsIndex < desserts.length; dessertsIndex++) {
+        dessertsContent.innerHTML += dishTemplate(desserts, dessertsIndex);
+    }
+
 }
 
 function addMainDishToCart(mainDishIndex){

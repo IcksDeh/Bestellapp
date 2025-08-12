@@ -30,3 +30,63 @@ let mainDishes = [
         "amount":0,
      },
 ]
+let sideDishes = [
+    {
+        "name":"Pommes",
+        "price":4.00,
+        "discription":"Knusprige frittierte Pommes mit Majonnaise und Ketchup",
+        "amount":0,
+     },
+     {
+        "name":"Süßkartoffelpommes",
+        "price":5.00,
+        "discription":"Knusprig frittierte Süßkartoffelpommes mit Sour Cream Dip",
+        "amount":0,
+     },
+     {
+        "name":"Ofenkartoffel",
+        "price":6.00,
+        "discription":"Garniert mit Sour Cream",
+        "amount":0,
+     },
+]
+let drinks = [
+    {
+        "name":"Wasser",
+        "price":4.00,
+        "discription":"0,5l still",
+        "amount":0,
+     },
+     {
+        "name":"Cola",
+        "price":4.00,
+        "discription":"0,5l",
+        "amount":0,
+     },
+     {
+        "name":"Fanta",
+        "price":4.00,
+        "discription":"0,5l",
+        "amount":0,
+     },
+]
+let desserts = [
+    {
+        "name":"Apfeltasche",
+        "price":6.00,
+        "discription":"Warme Apfeltasche mit Vanilleeis",
+        "amount":0,
+     },
+     {
+        "name":"Tiramisu",
+        "price":4.50,
+        "discription":"Löffelbiskuits mit Mascarponecreme und Kaffee",
+        "amount":0,
+     },
+     {
+        "name":"Eisbecher",
+        "price":8.00,
+        "discription":"4 Kugeln nach Wahl, mit Streusel und Sahne",
+        "amount":0,
+     },
+]
