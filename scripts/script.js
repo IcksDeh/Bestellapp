@@ -1,51 +1,26 @@
 function renderFunction() {
     loadFromLocalStorage();
-    renderMainDish();
-    renderSideDish();
-    renderDrinks();
-    renderDesserts();
-    showMainDishInCart();
+    renderDish('main_dish', 'mainDishes');
+    renderDish('side_dish', 'sideDishes');
+    renderDish('drinks', 'drinks');
+    renderDish('dessert', 'desserts');
+    // renderMainDishInCartTemplate();
+     
+    // showMainDishInCart();
 }
 
-function renderMainDish(){
-    let mainDishContent = document.getElementById('show_main_dish');
-    mainDishContent.innerHTML = '';
+function renderDish(id, arrayname){
+    let DishContent = document.getElementById('show_'+id);
+    let array = allDishes[arrayname];
+    DishContent.innerHTML = '';
 
-    for (let mainDishIndex = 0; mainDishIndex < mainDishes.length; mainDishIndex++) {
-        mainDishContent.innerHTML += dishTemplate(mainDishes, mainDishIndex);
+    for (let dishIndex = 0; dishIndex < array.length; dishIndex++) {
+        DishContent.innerHTML += dishTemplate(array, dishIndex, arrayname);
     }
 }
 
-function renderSideDish(){
-    let sideDishContent = document.getElementById('show_side_dish');
-    sideDishContent.innerHTML = '';
-
-    for (let sideDishIndex = 0; sideDishIndex < sideDishes.length; sideDishIndex++) {
-        sideDishContent.innerHTML += dishTemplate(sideDishes, sideDishIndex);
-    }
-}
-
-function renderDrinks(){
-    let drinksContent = document.getElementById('show_drinks');
-    drinksContent.innerHTML = '';
-
-    for (let drinksIndex = 0; drinksIndex < drinks.length; drinksIndex++) {
-        drinksContent.innerHTML += dishTemplate(drinks, drinksIndex );
-    }
-}
-
-function renderDesserts(){
-     let dessertsContent = document.getElementById('show_dessert');
-    dessertsContent.innerHTML = '';
-
-    for (let dessertsIndex = 0; dessertsIndex < desserts.length; dessertsIndex++) {
-        dessertsContent.innerHTML += dishTemplate(desserts, dessertsIndex);
-    }
-
-}
-
-function addMainDishToCart(mainDishIndex){
-    mainDishes[mainDishIndex].amount += 1;
+function addDishToCart(array, dishIndex){
+    array[dishIndex].amount += 1;
     showMainDishInCart();
     saveToLocalStorage();
 }
@@ -61,11 +36,11 @@ function reduceMainDishInCart(mainDishIndex){
 function showMainDishInCart(){
     let showCartContent = document.getElementById('cart_content_wrapper');
     showCartContent.innerHTML = "";
-    for (let index = 0; index < mainDishes.length; index++) {
-        if(mainDishes[index].amount >= 1){
-            showCartContent.innerHTML += showMainDishInCartTemplate(index);
-        }; 
-    }
+        for (let index = 0; index < allDishes.length; index++) {
+            if(allDishes[index].amount >= 1){
+                showCartContent.innerHTML += showMainDishInCartTemplate(array,index);
+            }; 
+        }
     calculateSubtotalCosts();
 }
 
