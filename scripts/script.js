@@ -4,9 +4,7 @@ function renderFunction() {
     renderDish('side_dish', 'sideDishes');
     renderDish('drinks', 'drinks');
     renderDish('dessert', 'desserts');
-    // renderMainDishInCartTemplate();
-     
-    // showMainDishInCart();
+    showDishInCart();
 }
 
 function renderDish(id, arrayname){
@@ -15,49 +13,58 @@ function renderDish(id, arrayname){
     DishContent.innerHTML = '';
 
     for (let dishIndex = 0; dishIndex < array.length; dishIndex++) {
-        DishContent.innerHTML += dishTemplate(array, dishIndex, arrayname);
+        DishContent.innerHTML += dishTemplate(arrayname, dishIndex, array);
     }
 }
 
-function addDishToCart(array, dishIndex){
+function addDishToCart(arrayname, dishIndex){
+    let array = allDishes[arrayname];
     array[dishIndex].amount += 1;
-    showMainDishInCart();
+    showDishInCart();
     saveToLocalStorage();
 }
 
-function reduceMainDishInCart(mainDishIndex){
-    if(mainDishes[mainDishIndex].amount >=1){
-        mainDishes[mainDishIndex].amount -= 1;
+function reduceDishInCart(arrayname, dishIndex){
+    let array = allDishes[arrayname];
+    if(array[dishIndex].amount >=1){
+        array[dishIndex].amount -= 1;
         saveToLocalStorage();
-        showMainDishInCart();
+        showDishInCart();
     }
 }
 
-function showMainDishInCart(){
+function showDishInCart(){
     let showCartContent = document.getElementById('cart_content_wrapper');
     showCartContent.innerHTML = "";
-        for (let index = 0; index < allDishes.length; index++) {
-            if(allDishes[index].amount >= 1){
-                showCartContent.innerHTML += showMainDishInCartTemplate(array,index);
-            }; 
+        for (let [arrayname, eachArray ] of Object.entries(allDishes)) {
+            for (let dishIndex = 0; dishIndex < eachArray.length; dishIndex++) {
+                if(eachArray[dishIndex].amount >= 1){
+                showCartContent.innerHTML += showDishInCartTemplate(arrayname, eachArray, dishIndex);
+                };
+            }  
         }
     calculateSubtotalCosts();
 }
 
-function setMainDishToZero(mainDishIndex){
-    mainDishes[mainDishIndex].amount = 0;
+function setDishToZero(arrayname, dishIndex){
+    let array = allDishes[arrayname]
+    array[dishIndex].amount = 0;
     saveToLocalStorage();
-    showMainDishInCart();
+    showDishInCart();
 }
 
 function calculateSubtotalCosts(){
     let showSubtotalCosts = document.getElementById('show_subtotal');
     let subtotal = 0;
-    for (let index = 0; index < mainDishes.length; index++) {
-       let resultEachDish = mainDishes[index].amount * mainDishes[index].price;
-       subtotal += resultEachDish;
-       showSubtotalCosts.innerHTML = subtotal.toFixed(2)+"€"; 
+
+    for (let arrayName in allDishes) {
+        let eachArray = allDishes[arrayName];
+            
+        for (let dish of eachArray){
+            subtotal += dish.amount * dish.price;
+        }
     }
+    showSubtotalCosts.innerHTML = subtotal.toFixed(2)+'€';  
     calculateTotalCosts(subtotal);
 }
 
@@ -83,15 +90,15 @@ function toggleCart(){
 }
 
 function saveToLocalStorage(){
-    localStorage.setItem("mainDishes", JSON.stringify(mainDishes));
+    localStorage.setItem("allDishes", JSON.stringify(allDishes));
 }
 
 function loadFromLocalStorage(){
-    let mainDishesArray = JSON.parse(localStorage.getItem("mainDishes"));
-    if(mainDishesArray == null){
-        mainDishesArray = mainDishes;
+    let allDishesArray = JSON.parse(localStorage.getItem("allDishes"));
+    if(allDishesArray == null){
+        allDishesArray = allDishes;
     }
     else{
-        mainDishes = mainDishesArray;
+        allDishes = allDishesArray;
     }
 }

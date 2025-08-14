@@ -18,6 +18,7 @@
     background-color: rgb(247, 244, 244);
     height: 50px;
     gap: 15px;
+    padding-left: 15px;
 }
 #rating{
     color: orange;
@@ -76,13 +77,18 @@
     align-items: center;
 }
 .content_main_wrapper{
-    width: calc(100% - 400px);
-    
-    
+    width: calc(100% - 400px);  
 }
 .main_cart_wrapper{
     display: flex;
     flex-direction: row;
     position: relative;
 
+}
+
+.header_distance{
+    width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

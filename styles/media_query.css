@@ -6,3 +6,22 @@
         height: 100%;
     }
 }
+
+@media (max-width: 1440px){
+    .distance_edge{
+        width: 100%;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media(max-width: 750px){
+    #menu_choice{
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
