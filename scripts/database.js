@@ -1,6 +1,6 @@
 let allDishes = {
 
-   mainDishes: [
+   "mainDishes": [
     {
         "name":"Gebratene Nudeln mit Gemüse und Ei",
         "price":8.00,

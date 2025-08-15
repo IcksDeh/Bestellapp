@@ -25,64 +25,78 @@
         <img onclick="toggleCart()" id="logo_header" src="./assets/img/cart_PP.svg" alt="Warenkorb"/>
        </div> 
     </header>
-    <main id="id_main_cart_wrapper" class="">
-      <section id="id_content_main_wrapper" class="">
-        <img class="img_div" id="img_asia_noodles" src="./assets/img/asiatische Nudeln.jpg" alt="Asiatische Nudeln"/>
-        <section class="distance_edge">
-          <h1>Beste Asiaküche</h1>
-          <p id="rating">Bewertung (4,2 von 5 Sternen)</p>
+    <div class="sort_main">
+      <main id="id_main_cart_wrapper" class="main_wrapper">
+        <section id="id_content_main_wrapper" class="">
+          <img class="img_div" id="img_asia_noodles" src="./assets/img/asiatische Nudeln.jpg" alt="Asiatische Nudeln"/>
+          <section class="distance_edge">
+            <h1>Beste Asiaküche</h1>
+            <p id="rating">Bewertung (4,2 von 5 Sternen)</p>
+          </section>
+          <section id="menu_choice" class="distance_edge">
+            <a href="#category_main_dish">Hauptgerichte</a>
+            <a href="#category_side_dish">Beilagen</a>
+            <a href="#category_drinks">Getränke</a>
+            <a href="#category_desserts">Desserts</a>
+          </section>
+          <section class="distance_edge">
+            <img id="category_main_dish" class="img_dish" src="./assets/img/Reisgericht.jpg" alt="Hauptgerichte"/>
+            <h2>Hauptgerichte</h2>
+            <article id="show_main_dish" class="all_boxes_maindish_section">
+            </article>
+          </section> 
+          <section class="distance_edge">
+            <img id="category_side_dish" class="img_dish" src="./assets/img/Pommes.jpg" alt="Beilagen" />
+            <h2 >Beilagen</h2>
+            <article id="show_side_dish" class="all_boxes_maindish_section">
+            </article>
+          </section>
+          <section class="distance_edge">
+            <img id="category_drinks" class="img_dish" src="./assets/img/getränke_2.jpg" alt="Beilagen" />
+            <h2 >Getränke</h2>
+            <article id="show_drinks" class="all_boxes_maindish_section">
+            </article>
+          </section>
+          <section class="distance_edge">
+            <img id="category_desserts" class="img_dish" src="./assets/img/dessert.jpg" alt="Beilagen" />
+            <h2>Dessert</h2>
+            <article id="show_dessert" class="all_boxes_maindish_section">
+            </article>
+          </section>
         </section>
-        <section id="menu_choice" class="distance_edge">
-          <a href="">Hauptgerichte</a>
-          <a href="">Beilagen</a>
-          <a href="">Getränke</a>
-          <a href="">Desserts</a>
-        </section>
-        <section class="distance_edge">
-          <img class="img_dish" src="./assets/img/Reisgericht.jpg" alt="Hauptgerichte"/>
-          <h2>Hauptgerichte</h2>
-          <article id="show_main_dish" class="all_boxes_maindish_section">
-          </article>
-        </section> 
-        <section class="distance_edge">
-          <img class="img_dish" src="./assets/img/Pommes.jpg" alt="Beilagen" />
-          <h2>Beilagen</h2>
-          <article id="show_side_dish" class="all_boxes_maindish_section">
-          </article>
-        </section>
-        <section class="distance_edge">
-          <img class="img_dish" src="./assets/img/getränke_2.jpg" alt="Beilagen" />
-          <h2>Getränke</h2>
-          <article id="show_drinks" class="all_boxes_maindish_section">
-          </article>
-        </section>
-        <section class="distance_edge">
-          <img class="img_dish" src="./assets/img/dessert.jpg" alt="Beilagen" />
-          <h2>Dessert</h2>
-          <article id="show_dessert" class="all_boxes_maindish_section">
-          </article>
-        </section>
-      </section>
-      <aside id="id_cartwrapper" class="cart_wrapper d_none">
-          <h2 class="title_basket">Warenkorb</h2>
-          <div id="cart_content_wrapper"></div>
-          <div id="id_divider" class="divider"></div>
-          <table id="table_costs" class="table_style">
-            <tr>
-              <td class="td_left">Zwischensumme</td>
-              <td id="show_subtotal" class="td_right">0,00€</td>
-            </tr>
-            <tr>
-              <td class="td_left">Lieferkosten</td>
-              <td id="delivery_costs" class="td_right">5,00€</td>
-            </tr>
-            <tr>
-              <td class="td_left">Gesamt</td>
-              <td id="show_total_costs" class="td_right">0,00€</td>
-            </tr>
-          </table>
-      </aside>
-    </main>
+        <div id="show_order_overlay" class="d_none">
+          <div class="move_overlay_right">
+            <img class="close_Button" onclick="closeOverlay()" src="./assets/img/closebutton.svg" alt="Schließen">
+          </div> 
+          <div class="sort_order_overlay">
+            <h3>Bestellbesätigung</h3>
+            <p>Ihre Bestellung ist eingegangen und wird umgehend bearbeitet.</p>
+          </div> 
+        </div>
+        <aside id="id_cartwrapper" class="cart_wrapper d_none">
+            <h2 class="title_basket">Warenkorb</h2>
+            <div id="cart_content_wrapper"></div>
+            <div id="id_divider" class="divider"></div>
+            <table id="table_costs" class="table_style">
+              <tr>
+                <td class="td_left">Zwischensumme</td>
+                <td id="show_subtotal" class="td_right">0,00€</td>
+              </tr>
+              <tr>
+                <td class="td_left">Lieferkosten</td>
+                <td id="delivery_costs" class="td_right">5,00€</td>
+              </tr>
+              <tr>
+                <td class="td_left">Gesamt</td>
+                <td id="show_total_costs" class="td_right">0,00€</td>
+              </tr>
+            </table>
+            <div class="div_button_set_order">
+              <button id="id_button_set_order" class="button_set_order" onclick="setAllDishesToZero()">Bestellung abschicken</button>
+            </div> 
+        </aside>
+      </main>
+    </div>
     <footer>
       <p>Created by Anja</p>
     </footer>

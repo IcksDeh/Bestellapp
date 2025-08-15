@@ -36,7 +36,7 @@ function reduceDishInCart(arrayname, dishIndex){
 function showDishInCart(){
     let showCartContent = document.getElementById('cart_content_wrapper');
     showCartContent.innerHTML = "";
-        for (let [arrayname, eachArray ] of Object.entries(allDishes)) {
+        for (let [arrayname, eachArray] of Object.entries(allDishes)) {
             for (let dishIndex = 0; dishIndex < eachArray.length; dishIndex++) {
                 if(eachArray[dishIndex].amount >= 1){
                 showCartContent.innerHTML += showDishInCartTemplate(arrayname, eachArray, dishIndex);
@@ -57,15 +57,25 @@ function calculateSubtotalCosts(){
     let showSubtotalCosts = document.getElementById('show_subtotal');
     let subtotal = 0;
 
-    for (let arrayName in allDishes) {
-        let eachArray = allDishes[arrayName];
+    // for (let index = 0; index < allDishes.length; index++) {
+    //     let eachDishArray = allDishes[index];
+    //     for (let index = 0; index < eachDishArray.length; index++) {
+    //         const element = array[index];
             
-        for (let dish of eachArray){
+    //     }
+        
+    // }
+
+    for (let eachDish in allDishes) {
+        let eachDishArray = allDishes[eachDish];
+            
+        for (let dish of eachDishArray){
             subtotal += dish.amount * dish.price;
         }
     }
     showSubtotalCosts.innerHTML = subtotal.toFixed(2)+'€';  
     calculateTotalCosts(subtotal);
+    activateDiableOrderButton(subtotal);
 }
 
 function calculateTotalCosts(subtotal){
@@ -83,8 +93,18 @@ function calculateTotalCosts(subtotal){
     }
 }
 
+function activateDiableOrderButton(subtotal){
+        if(subtotal > 0){
+            document.getElementById('id_button_set_order').disabled = false;
+        }
+        else{
+            document.getElementById('id_button_set_order').disabled = true;
+        }
+}
+
 function toggleCart(){
     document.getElementById('id_content_main_wrapper').classList.toggle('content_main_wrapper');
+    document.getElementById('id_main_cart_wrapper').classList.toggle('main_wrapper');
     document.getElementById('id_main_cart_wrapper').classList.toggle('main_cart_wrapper');
     document.getElementById('id_cartwrapper').classList.toggle('d_none');
 }
@@ -101,4 +121,25 @@ function loadFromLocalStorage(){
     else{
         allDishes = allDishesArray;
     }
+}
+
+function setAllDishesToZero(){
+    for(let eachDishObject in allDishes){
+        let eachDishArray = allDishes[eachDishObject];
+        for (let eachDish of eachDishArray)
+            eachDish.amount = 0; 
+    }
+    showDishInCart();
+    saveToLocalStorage();
+    showOverlay();
+}
+
+function showOverlay(){
+    document.getElementById('show_order_overlay').classList.remove('d_none');
+    document.getElementById('show_order_overlay').classList.add('order_overlay');
+}
+
+function closeOverlay(){
+    document.getElementById('show_order_overlay').classList.remove('order_overlay');
+    document.getElementById('show_order_overlay').classList.add('d_none');
 }

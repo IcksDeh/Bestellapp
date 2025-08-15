@@ -5,13 +5,20 @@
         background-color: white;
         height: 100%;
     }
+    .order_overlay{
+        z-index: 1;
+    }
 }
 
 @media (max-width: 1440px){
     .distance_edge{
         width: 100%;
-        margin-left: 50px;
-        margin-right: 50px;
+    }
+    .main_wrapper{
+        width: 100%;
+    }
+    .main_cart_wrapper{
+        width: 100%;
     }
 }
 
@@ -22,6 +29,12 @@
         height: 100%;
         padding-top: 15px;
         padding-bottom: 15px;
+    }
+}
+
+@media(max-width:480px){
+    .order_overlay{
+        width: 100%;
     }
 }
 
