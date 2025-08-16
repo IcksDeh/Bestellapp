@@ -20,6 +20,9 @@
     .main_cart_wrapper{
         width: 100%;
     }
+    #logo_header{
+        padding-left: 20px;
+    }
 }
 
 @media(max-width: 750px){

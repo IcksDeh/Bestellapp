@@ -5,6 +5,7 @@ function renderFunction() {
     renderDish('drinks', 'drinks');
     renderDish('dessert', 'desserts');
     showDishInCart();
+    showDishContent();
 }
 
 function renderDish(id, arrayname){
@@ -36,10 +37,10 @@ function reduceDishInCart(arrayname, dishIndex){
 function showDishInCart(){
     let showCartContent = document.getElementById('cart_content_wrapper');
     showCartContent.innerHTML = "";
-        for (let [arrayname, eachArray] of Object.entries(allDishes)) {
-            for (let dishIndex = 0; dishIndex < eachArray.length; dishIndex++) {
-                if(eachArray[dishIndex].amount >= 1){
-                showCartContent.innerHTML += showDishInCartTemplate(arrayname, eachArray, dishIndex);
+        for (let [dishName, dishArray] of Object.entries(allDishes)) {
+            for (let dishIndex = 0; dishIndex < dishArray.length; dishIndex++) {
+                if(dishArray[dishIndex].amount >= 1){
+                showCartContent.innerHTML += showDishInCartTemplate(dishName, dishArray, dishIndex);
                 };
             }  
         }
